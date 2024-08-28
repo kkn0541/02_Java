@@ -1,0 +1,65 @@
+package edu.kh.variable.ex1;
+
+public class VariableExample2 {
+	public static void main(String[] args) {
+/*자바 기본 자료형 8가지 
+ * 논리형 : boolean(1byte)
+ * 정수형 : byte(1byte) , short(2byte) , int(4byte) , long(8byte) 
+ * 실수형 : float(4byte), double(8btye)
+ * 문자형 :char(2byte, 유니코드)
+ * 
+ *참조형 - 문자열 String  
+ * */
+		
+		// 변수 선언 : 메모리에 값을 저장할 공간을 할당하는 것 
+		// 변수 값 대입 : 변수에 값을 집어 넣는 것 .
+		
+		boolean booleanData;
+		//메모리에 논리값(t/f)을 저장할 공간을 1byte 할당하고 
+		//할당된 공간을 booleanData라고 부르겠다. 
+		
+		booleanData= true; //booleanData변수에 true 논리값 집어 넣기(대입)
+		
+		System.out.println("booleanData:"+booleanData);
+		
+		byte byteNumber=127; //128 넣는 순간 에러 
+		// 메모리에 정수값을 저장할 공간을 1byte 할당하고 
+		// 할당된 공간을 byteNumber 라고 부르겠다. 
+		// 선언된 byteNumber변수에 처음으로 127을 넣음 
+		// --> 초기화 
+		
+		short shortNumer= 32767;
+		
+		// 정수 자료형 기본형! (short ,byte 는 옛날코드 잔재 )
+		int intNumber = 2147483647;
+	//자료형 변수명   = 리터럴(대입되는 값)
+		
+		// 프로그래밍에서 대입되는 이 데이터(값자체)를 리터럴 이라는 단어로도 표현
+
+		//** 리터럴 : 변수에 대입되거나 작성되어지는값 자체 
+		// + 자료형에 따라 리터럴 표기법이 다름.
+		
+		long longNumber = 10000000000L;
+		// -> The literal 10000000000 of type int is out of range 
+		// -> 100억이라는 값은 int의 범위를 벗어났다. 
+		// 뒤에 L 을 붙여줌으로써 long 자료형인 것을 나타냄.
+		
+		
+		float floatNumber=1.2345f; // f 또는 F
+		// 1.2345 까지만 쓰면 double 자료형으로 인식함
+		
+		double doubleNumber=3.141592;
+		//double이 실수형 중에서 기본형
+		//리터럴 표기 법 없는 실수는 double로 인식 
+		//d를 뒤에 쓸수는 있다. ->3.141592d;
+		
+		//문자형 리터럴 표기법 : ''(홑따옴표)
+		//-> 문자 하나 
+		char ch='A';
+		char ch2=66;
+		
+		System.out.println("ch:"+ ch);
+		
+		
+	}
+}
