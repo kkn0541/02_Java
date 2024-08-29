@@ -1,0 +1,21 @@
+package edu.kh.op.practice;
+
+import java.util.Scanner;
+
+public class OperatorPractice { // 기능 제공용 클래스 
+//메서드..
+ public void practic1() {
+	 //인원수 사탕개수 입력 받기 
+	 
+	 Scanner sc= new Scanner(System.in);
+	 int input1= sc.nextInt();
+	 int input2= sc.nextInt();
+	 
+	 System.out.println("인원수입력");
+	 
+	 
+	 
+	 
+	 
+ }
+}

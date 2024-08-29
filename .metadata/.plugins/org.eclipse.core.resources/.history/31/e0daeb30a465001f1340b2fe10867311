@@ -1,0 +1,21 @@
+package edu.kh.variable.ex2;
+
+public class PrintExample {
+	
+	public static void main(String[] args) {
+		
+//	System.out.print();  단순 출력용 매서드(출력 후 줄바꿈 x)		
+//	System.out.println(); 한줄 출력용 메서드(출력 후 줄바꿈 수행 )	
+//  줄바꿈 여부 차이점은 있지만 괄호안의 내용이 그대로 출력된다는 것은 똑같음 
+
+		
+	System.out.println("테스트1");	
+	System.out.println("테스트2");
+	
+	System.out.print("테스트3");
+	System.out.print("테스트4");
+	
+		
+	}
+
+}

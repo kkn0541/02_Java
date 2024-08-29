@@ -1,0 +1,15 @@
+package edu.kh.op.ex;
+
+
+public class ExampleRun { // 코드 실행용 클래스
+
+	//메인메서드가 필수로 작성되어있어야함 ㅁ
+	public static void main(String[] args) {
+		
+		//OpEample 생성 
+		//opexample 이 자료형으로 
+		OpExample ex =new OpExample();
+
+	}
+
+}

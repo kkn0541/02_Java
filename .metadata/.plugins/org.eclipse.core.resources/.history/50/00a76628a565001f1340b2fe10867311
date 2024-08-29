@@ -1,0 +1,41 @@
+package edu.kh.variable.ex2;
+
+public class PrintExample {
+	
+	public static void main(String[] args) {
+		
+//	System.out.print();  단순 출력용 매서드(출력 후 줄바꿈 x)		
+//	System.out.println(); 한줄 출력용 메서드(출력 후 줄바꿈 수행 )	
+//  줄바꿈 여부 차이점은 있지만 괄호안의 내용이 그대로 출력된다는 것은 똑같음 
+
+		
+	System.out.println("테스트1");	
+	System.out.println("테스트2");
+	
+	System.out.print("테스트3");
+	System.out.println(); // 내용 없는 println() : 단순 줄바꿈 
+	System.out.print("테스트4");
+	
+	
+	//system.out.prinf(): 출력될 문자열 형식을 패턴으로 지정하는 출력구문 
+	
+	System.out.println(); // 줄바꿈
+	
+	int iNum1=10;
+	int iNum2=5;
+	
+	// 10 + 5=15
+	System.out.println(iNum1+"+"+iNum2+"="+(iNum1+ iNum2)); // 어려움 
+	
+	//System.out.printf("패턴",패턴에 들어갈값);
+	
+	//10 + 5=15       정수 +정수 =정수 
+	System.out.println("%d+%d=%d",iNum1,iNum2,iNum1+iNum2);
+	
+	
+	
+	
+		
+	}
+
+}

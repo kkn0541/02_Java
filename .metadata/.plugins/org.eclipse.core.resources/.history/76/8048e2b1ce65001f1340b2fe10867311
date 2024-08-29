@@ -1,0 +1,21 @@
+package edu.kh.op.practice;
+
+import java.util.Scanner;
+
+public class OperatorPractice2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc= new Scanner(System.in);
+		int input1= sc.nextInt();
+		String resutl1=input1>=20? 저는 성인입니다 : 저는 청소년입니다;
+		
+		
+		
+		
+		
+		
+	}
+
+}
