@@ -19,8 +19,8 @@ public class PracticeRun {
 	//	op.practice3();
 	
 		OperatorPractice3 op1= new OperatorPractice3();
-		op1.practice1();
-		//op1.practice2();
+	//	op1.practice1();
+	op1.practice2();
 	//	op1.practice3();
 	}
 }

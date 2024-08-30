@@ -28,6 +28,30 @@ public class OperatorPractice3 {
 	public void practice2() {
 		Scanner sc= new Scanner(System.in);
 		System.out.println("가격을 입력하세요");
+//		int amount=sc.nextInt();
+//		
+//		int fiftyThousand =amount /50000;
+//		
+//		// 50000원으로 나눈 나머지값 누적 
+//		amount %= 50000;
+//		
+//		
+//		int tenThousand =amount /10000;
+//		amount %= 10000;
+//		
+//		int fiveThousand =amount /5000;
+//		amount %= 5000;
+//		
+//		int oneThousand =amount /1000;
+//		amount %= 1000;
+//		
+//		
+//		System.out.println("5만원"+fiftyThousand);
+//		System.out.println("만원"+tenThousand);
+//		System.out.println("오천원"+fiveThousand);
+//		System.out.println("천원"+oneThousand);
+//		
+		
 		int input3= sc.nextInt();
 		
 		int result1=input3/50000;

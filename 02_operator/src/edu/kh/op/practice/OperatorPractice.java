@@ -17,6 +17,9 @@ public class OperatorPractice { // 기능 제공용 클래스
 	 System.out.println("남은 사탕개수"+ input2 % input1);
 	 
  }
+ 
+ //nextint , nextdouble 뒤에는 nextLine 쓰지말것 
+ //쓰고싶으면 sc.nextLine(); 쓰고 할것 
  public void practice2() {
 	 Scanner sc= new Scanner(System.in);
 	 System.out.print("이름");
@@ -27,11 +30,15 @@ public class OperatorPractice { // 기능 제공용 클래스
 	 int input5=sc.nextInt();
 	 System.out.print("번호");
 	 int input6=sc.nextInt();
+	
+	 //nextint , nextdouble 뒤에는 nextLine 쓰지말것 
+	 //쓰고싶으면 sc.nextLine(); 쓰고 할것  sc.nextLine() -> (입력버퍼에 남아있는 개행문자 비우기)
+	 
 	 //성별 
 	 System.out.print("성별");
 	 String input7=sc.next();
 	 String result=input7=="남학생"?  "남학생": "여학생";
-	
+
 	 System.out.print("성적");
 	 double input8=sc.nextDouble();
 	 
