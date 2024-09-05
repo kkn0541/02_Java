@@ -31,7 +31,7 @@ public class People { // 국민(사람) 클래스
 	//public , privae 은 [접근제한자] 자료형 변수명;
 	
 	
-	
+	//필드 == 필드변수 == 멤버변수  
 	private String name; 
 	private char gender;
 	private String pNo; //"123456-1234567"
