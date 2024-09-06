@@ -106,6 +106,7 @@ public class ForExample { // 기능제공용 클래스
 		if (dan >= 2 && dan <= 9) { // 2~9 사이일때
 			for (int i = 1; i <= 9; i++) { // 곱해질 수
 				System.out.printf("%d x %d= %d \n", dan, i, dan * i);
+				
 			}
 
 		} else { // 범위 밖일떄

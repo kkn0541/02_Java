@@ -6,26 +6,32 @@ public class BookService {
 	public void practice() {
 		Book book = new Book();
 		
+		//기본생성자
 		System.out.println(book.toString());
 		
 		
 		Book book1= new Book("자바의 정석",30000,0.2,"남궁성");
 		
+		//3) 객체가 가진 필드 값을 toString()을 이용하여 출력 
 		System.out.println(book1.toString());
 		
 		System.out.println();
 		System.out.println("======================================");
 		System.out.println("수정된 결과 확인");
 	
-	
+	//첫번째 객체가 가진 값을 setter를 이용해서 수정
 		book.setTitle("c언어");
 		book.setPrice(30000);
 		book.setDiscountRate(0.1);
 		book.setAuthor("홍길동");
 		
+		//5. 수정된 객체의 필드 값을 tostring() 메소드 이용하여 출력 
+		
+		
 		System.out.println(book.toString());
 		System.out.println(book1.toString());
 
+		// 계산 
 		System.out.println("도서명="+book.getTitle());
 		System.out.printf("할인된 가격 %.0f 원\n" ,book.getPrice()-( book.getPrice()*book.getDiscountRate()));
 

@@ -13,11 +13,11 @@ public class LoopRun {
 	//	forEx.ex3();
 	//  forEx.ex4();
 	//	forEx.ex5();
-	//	forEx.ex6();
+		forEx.ex6();
 	//	forEx.ex7();
 	//  forEx.ex8();
 	//	whileEx.ex1();
-		whileEx.ex2();
+	//	whileEx.ex2();
 	}
 	
 	
