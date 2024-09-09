@@ -2,6 +2,7 @@ package edu.kh.oarr.model.service;
 
 import java.util.Scanner;
 
+
 import edu.kh.oarr.model.vo.Member;
 
 public class MemberService {
@@ -21,6 +22,10 @@ public class MemberService {
 		memberArr[1] = new Member("user02", "pass02", "계보린", 25, "경기");
 		memberArr[2] = new Member("user03", "pass03", "고길동", 45, "강원");
 
+		
+
+		 
+		
 	}
 
 	// 기능

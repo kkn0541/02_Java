@@ -1,77 +1,91 @@
 package com.hw1.run;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import com.hw1.model.vo.Employee;
 
 public class Run {
 
-	
-	
-	
 	public static void main(String[] args) {
-		
-		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
 
-		/*
-		 * 3개의 생성자를 사용하여 3명의 사원 정보를
-배열로 생성한 후 출력 해보고 값이 없는
-필드에 각각 값을 입력해 넣어 출력
-직원 각각의 보너스가 적용된 연봉을 계산하여
-출력하고 총 직원 연봉의 평균을 구하여 출력
-		 * 
-		 * 
-		 * */
 		
-		 Scanner sc = new Scanner(System.in);
-		Employee emp[]= new Employee[3];
+	Employee emp[] = new Employee[3];
+	
+	emp[0]= new Employee();
+	emp[1]= new Employee(1,"홍길동",19,'m',"01022223333","서울 잠실");
+	emp[2]= new Employee(2, "강말순", "교육부", "강사", 20, 'F', 1000000, 0.01, "01011112222", "서울 마곡");
+	
 		
-	int index=0;
-			
-	for (int i = 0; i < emp.length; i++) {
-		if (emp[i] == null) {
-			index = i;
-			
-			System.out.println("====정보입력-=======");
-			
-			
-			
-			System.out.print("사번:");
-			int empNo = sc.nextInt();
-			
-			System.out.print("사원명:");
-			String empName = sc.next();
-			
-			System.out.print("소속부서:");
-			String dept = sc.next();
-			
-			System.out.print("직급");
-			String job = sc.next();
-			
-			System.out.print("나이:");
-			int age = sc.nextInt();
-			
-			System.out.print("성별:");
-			char gender = sc.next().charAt(0);
-			
-			System.out.print("급여:");
-			int salary = sc.nextInt();
-			
-			System.out.println("보너스 포인트");
-			double bonusPoint = sc.nextDouble();
-			
-			System.out.println("전화번호");
-			String phone=sc.nextLine();
-			
-			System.out.println("주소");
-			String address= sc.next();
-			
-			emp[index]=new Employee(empNo, empName,dept,job,age,gender,salary,bonusPoint,phone,address );
-			
+		for (int i = 0; i < emp.length; i++) {
+			System.out.println(emp[i].information());
 		}
-	//	System.out.println(emp[i].(type[]) collection.toArray(new type[collection.size()])toString());
-	}
+		
+		
+		for (int j = 0; j < emp.length; j++) {
+			
+			if(emp[j].getDept()==null) {
+				System.out.println(j+"빈곳잇음");
+			
+				System.out.println("==========수정입력-================");
+			
+			
+				System.out.print("사번:");
+				int empNo = sc.nextInt();
+				
+				System.out.print("사원명:");
+				String empName = sc.next();
+				
+				System.out.print("소속부서:");
+				String dept = sc.next();
+				
+				System.out.print("직급");
+				String job = sc.next();
+				
+				System.out.print("나이:");
+				int age = sc.nextInt();
+				
+				System.out.print("성별:");
+				char gender = sc.next().charAt(0);
+				
+				System.out.print("급여:");
+				int salary = sc.nextInt();
+				
+				System.out.println("보너스 포인트");
+				double bonusPoint = sc.nextDouble();
+				
+				System.out.println("전화번호");
+				String phone=sc.next();
+				//System.out.println(phone);
+				sc.nextLine();
+				
+				System.out.println("주소");
+				String address= sc.nextLine();
+			
+			emp[j]= new Employee(empNo, empName,dept,job, age,gender,salary,bonusPoint,phone,address);
+			
+			System.out.println(emp[j].information());
+			
+			
+			}
+			else {
+			
+				
+				
+				
+			}
+		break;
+		}
+		
+		
 	
+	
+	
+
+	
+	
+
 	
 	
 	
@@ -81,5 +95,6 @@ public class Run {
 		
 		
 	}
+	
 
 }
