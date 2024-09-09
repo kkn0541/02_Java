@@ -37,6 +37,7 @@ public class Member { // 속성+ 기능
 
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
+//member객체로 만든 필드에 대입 ->memberinfo
 	}
 
 	public String getMemberPW() {
