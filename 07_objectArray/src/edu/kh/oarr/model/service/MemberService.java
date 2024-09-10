@@ -58,7 +58,7 @@ public class MemberService {
 			case 3:
 				System.out.println(selectMember()); break;
 			case 4:
-				int result= updateMember(); 
+				int result= updateMember(); //0 1 -1
 				if(result==-1) {
 					System.out.println("로그인 먼저 하시오");
 				}else if (result==0) {
@@ -222,6 +222,7 @@ public class MemberService {
 
 	public String selectMember() {
 		//1) 로그인 여부 확인
+		//->필드 loginMmeber가 참조하는 객체가 있는지 확인 
 		if(loginMember ==null) {
 			return "로그인 후 이용하세요";
 		}
