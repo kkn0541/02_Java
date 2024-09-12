@@ -26,8 +26,12 @@ public Employee(String id, String name, String position) {
 
 @Override
 public String getinfo() {
-	// TODO Auto-generated method stub
-	return null;
+	
+	                 //    패턴   ,값 printF랑 똑같음
+	//protected w직접접근가능
+ 	return String.format("Id : %s, 이름 : %s , 직책 :%s",id,name,position);
+ 	//id와 name을 person에서 protected로 만들었기 깨문에 
+ 	// 후손클래스에서 직접 접근 가능 
 }
 
 

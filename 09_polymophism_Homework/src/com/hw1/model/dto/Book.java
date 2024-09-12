@@ -1,8 +1,9 @@
 package com.hw1.model.dto;
 
+//추상메서드있으니까 추상클래스
 public abstract class Book  {
-private String title;
-private String author;
+private String title; //제목
+private String author;//저자
 
 
 
@@ -34,6 +35,8 @@ public Book(String title, String author) {
 	this.author = author;
 }
 
+//추상메서드 
+//오버라이딩 강제화 
 public abstract void displayInfo();
  
 }

@@ -5,12 +5,15 @@ import com.hw2.model.dto.Prisoner;
 
 public class Prison implements ManagementSystem{
 
-	private Prisoner[] prisoners;
+	private Prisoner[] prisoners; // 수감자 객체 배열 
 	private int prisonerCount;
 	
 	public Prison(int size) {
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	
 	
 	@Override
 	public void addPerson(Person person) {
