@@ -135,8 +135,8 @@ public class StudentService {
 				// 이를 방지하기 위해 임의 값 -1 대입
 			}
 
-		} while (menuNum != 0);
-
+		} while (menuNum != 0); // false일 경우 do while문 종료 
+								// true 일경우 do부분 실행문 실행 
 	}
 
 	/**

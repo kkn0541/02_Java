@@ -277,7 +277,6 @@ public class StudentService {
 		 System.out.println(std);
 	 }
   
-  boolean String.equals(Object anObject)
-  
+ 
   }
 }
