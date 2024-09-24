@@ -29,9 +29,12 @@ public class Friend {
 	
 	@Override
 	public String toString() {
-		return  name + "골목대장이다";
+		return  name ;
+		//객체명만 호출해도 tostring 호출
+		
 	}
 
+	
 	public void  pickLeader() {
 		System.out.println(name+"골목대장이다");
 	}
