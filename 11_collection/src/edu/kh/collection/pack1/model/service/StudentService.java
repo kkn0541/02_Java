@@ -135,8 +135,8 @@ public class StudentService {
 				// 이를 방지하기 위해 임의 값 -1 대입
 			}
 
-		} while (menuNum != 0); // false일 경우 do while문 종료 
-								// true 일경우 do부분 실행문 실행 
+		} while (menuNum != 0); // false일 경우 do while문 종료
+								// true 일경우 do부분 실행문 실행
 	}
 
 	/**
@@ -457,38 +457,37 @@ public class StudentService {
 		}
 	}
 
-	
 	/**
-	 * 이름에 따라 정렬하는 comparator 객체 생성 
+	 * 이름에 따라 정렬하는 comparator 객체 생성
 	 */
 	private void sortByName() {
-		
-		//                                            static
-		
-		Comparator<Student> nameComparator=Comparator.comparing(Student::getName);//오름차순
-		//Comparator<Student> nameComparator=Comparator.comparing(Student::getName).reversed(); //내림차순
-			//맨뒤에 reversed 붙히면 내림차순 
-		//comparing()는 기본적으로 오름차순 
-		//내림차순 원하면 reversed(); 사용 
-		
-		//Comparator 인터페이스의 static 메서드인 comparing()을 사용하여 
-		//comparing()을 사용하여 comparator 객체를 생성 
-		//->comparing()는 주어진 키를 기반으로 객체를 비교함 
-		//Student  :: getName ->메서드 레퍼런스(method Reference) 
-		//student 클래스의 getName()을 가리키는 것.
-		//이 메서드를 비교의 키로 사용하여 각 student 객체를 비교하고 정렬함 
-		//-->comparator.comparing(Student :: getName)은 student 객체의 이름(name)을
-		//기준으로 학생객체를 비교하는 comparator 객체를 생성 . 
-		
-		//이름에 따라 정렬 
-		Collections.sort(studentList,nameComparator);
-		
-		for(Student std :studentList) {
+
+		// static
+
+		Comparator<Student> nameComparator = Comparator.comparing(Student::getName);// 오름차순
+		// Comparator<Student>
+		// nameComparator=Comparator.comparing(Student::getName).reversed(); //내림차순
+		// 맨뒤에 reversed 붙히면 내림차순
+		// comparing()는 기본적으로 오름차순
+		// 내림차순 원하면 reversed(); 사용
+
+		// Comparator 인터페이스의 static 메서드인 comparing()을 사용하여
+		// comparing()을 사용하여 comparator 객체를 생성
+		// ->comparing()는 주어진 키를 기반으로 객체를 비교함
+		// Student :: getName ->메서드 레퍼런스(method Reference)
+		// student 클래스의 getName()을 가리키는 것.
+		// 이 메서드를 비교의 키로 사용하여 각 student 객체를 비교하고 정렬함
+		// -->comparator.comparing(Student :: getName)은 student 객체의 이름(name)을
+		// 기준으로 학생객체를 비교하는 comparator 객체를 생성 .
+
+		// 이름에 따라 정렬
+		Collections.sort(studentList, nameComparator);
+
+		for (Student std : studentList) {
 			System.out.println(std);
 		}
-		
-		
-		
+
 	}
 
+	
 }
