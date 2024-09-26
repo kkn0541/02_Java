@@ -175,7 +175,7 @@ public class BookService {
 			if (temp.getBookNum() == bookNum) {
 				// 입력 도서번호화 도서목록 번호 일치하는걸 찾았을떄
 				// 찾앗다
-				//flag = false;
+				flag = false;
 
 				System.out.println("1. 도서명");
 				System.out.println("2. 도서저자");
