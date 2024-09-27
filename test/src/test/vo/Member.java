@@ -4,6 +4,7 @@ public class Member {
 
 	private String id;
 	private String pw;
+	private String pw2;
 	private String birth;
 	
 	public Member() {
@@ -68,6 +69,6 @@ public String getId() {
 @Override
 	public String toString() {
 		// TODO Auto-generated method stub
-	return "id : " + id + "  ,   " + "pw :" + pw + "birth" +  birth;
+	return " id : " + id + "  ,   " + "비밀번호 :" + pw + "    생년월일" +  birth;
 	}	
 }

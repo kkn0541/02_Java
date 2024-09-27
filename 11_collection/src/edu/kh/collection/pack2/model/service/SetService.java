@@ -63,7 +63,6 @@ public class SetService {
 		set.add("배달의민족");
 		set.add("배달의민족");
 		set.add("배달의민족");
-
 		System.out.println(set);
 		// null도 중복 불가 확인
 		set.add(null);
