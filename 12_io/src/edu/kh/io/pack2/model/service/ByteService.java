@@ -413,7 +413,7 @@ public class ByteService {
 			// "문자열" 과 일치하는 부분의 인덱스를 반환 
 			// 없으면 -1반환
 			
-			int insertPoint = target.lastIndexOf(".");
+			int insertPoint = target.lastIndexOf("."); //22번 인덱스 0
 			sb.insert(insertPoint, "_copy");
 			
 			String copy = sb.toString(); // 복사할 파일의 경로 
