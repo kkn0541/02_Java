@@ -15,7 +15,7 @@ public class Zoo {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void addAnimal(Animal animal) {
+	public void  addAnimal(Animal animal) {
 		animals.add(animal);
 		
 		
