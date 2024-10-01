@@ -5,7 +5,7 @@ public class Patient {
 	private String name;
 	private String birth;
 	private char gender;
-	private int pNumber;
+	private String pNumber;
 	private String department;
 	private int day;
 	
@@ -16,7 +16,7 @@ public class Patient {
 	
 
 
-	public Patient(String name, String birth, char gender, int pNumber, String department, int day) {
+	public Patient(String name, String birth, char gender, String pNumber, String department, int day) {
 		super();
 		this.name = name;
 		this.birth = birth;
@@ -51,11 +51,11 @@ public class Patient {
 		this.gender = gnder;
 	}
 
-	public int getpNumber() {
+	public String getpNumber() {
 		return pNumber;
 	}
 
-	public void setpNumber(int pNumber) {
+	public void setpNumber(String pNumber) {
 		this.pNumber = pNumber;
 	}
 

@@ -1,9 +1,13 @@
 package test.service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -50,10 +54,10 @@ public class HospitalService {
 		doctor.add(new Doctor("권내과", "내과", "19931116"));
 		doctor.add(new Doctor("최외과", "외과", "19831002"));
 
-		patient.add(new Patient("김길동", "19550102", 'm', 01011112222, "내과", 20240101));
-		patient.add(new Patient("마이콜", "19990718", 'm', 01055556666, "안과", 20240502));
-		patient.add(new Patient("홍도치", "19710812", 'w', 01033334444, "외과", 20240601));
-		patient.add(new Patient("박둘리", "20051006", 'w', 01011112222, "외과", 20240825));
+		patient.add(new Patient("김길동", "19550102", 'm', "01011112222", "내과", 20240101));
+		patient.add(new Patient("마이콜", "19990718", 'm', "01055556666", "안과", 20210502));
+		patient.add(new Patient("홍도치", "19710812", 'w', "01033334444", "외과", 20220601));
+		patient.add(new Patient("박둘리", "20051006", 'w', "01011112222", "외과", 20230825));
 
 	}
 
@@ -258,9 +262,10 @@ public class HospitalService {
 		do {
 			System.out.println("1. 입원환자조회"); // select
 			System.out.println("2. 입원환자추가"); // update
-			System.out.println("3. 퇴원"); // delete
-			System.out.println("4. 교수 조회"); // select , sort
-			System.out.println("5. 담당 교수 할당");
+			System.out.println("3. 환자정보변경"); // update
+			System.out.println("4. 퇴원"); // delete
+			System.out.println("5. 교수 조회"); // select , sort
+			System.out.println("6. 담당 교수 할당");
 
 			System.out.print("번호 선택 : ");
 
@@ -276,10 +281,13 @@ public class HospitalService {
 					patientAdd();
 					break;
 				case 3:
-					patientRemove();
+					patientUpdate();
 					break;
 				case 4:
-					doctorList();
+					patientRemove();
+					break;
+				case 5:
+					departmentList();
 					break;
 
 				case 0:
@@ -303,8 +311,6 @@ public class HospitalService {
 								// true 일경우 do부분 실행문 실행
 	}
 
-	
-
 	public void patientList() {
 
 		int ptNum = 0;
@@ -313,8 +319,32 @@ public class HospitalService {
 			ptNum++;
 			System.out.println(ptl);
 		}
+
 		System.out.println("  총  " + ptNum + "  분이 입원중입니다.");
 		System.out.println();
+
+		System.out.println("입원일순으로 정렬하시겠습니까   y/n");
+
+		char yn = sc.next().toUpperCase().charAt(0);
+		if (yn == 'Y') {
+			patientListByday();
+
+		}
+
+	}
+
+	public void patientListByday() {
+		System.out.println("입원일순으로 정렬");
+
+		List<Patient> sortPt = new ArrayList<Patient>(patient);
+
+		// 입원일 순으로 오름차순 정렬
+		sortPt.sort(Comparator.comparing(Patient::getDay));
+
+		for (Patient sort : sortPt) {
+			System.out.println(sort);
+		}
+
 	}
 
 	public void patientAdd() {
@@ -329,7 +359,7 @@ public class HospitalService {
 		String birth = sc.next();
 
 		System.out.print("환자 성별 - m / w");
-		char gender = sc.next().charAt(0);
+		char gender = sc.next().toUpperCase().charAt(0);
 
 		System.out.print("환자 연락처");
 		int pNumber = sc.nextInt();
@@ -342,9 +372,9 @@ public class HospitalService {
 
 		for (Patient ptAdd : patient) {
 
-			patient.add(new Patient(name, birth, gender, pNumber, department, day));
+			patient.add(new Patient(name, birth, gender, birth, department, day));
 			System.out.println(name + "  환자님을 추가하였습니다.");
-
+			System.out.println();
 			patientList();
 			break;
 
@@ -407,13 +437,104 @@ public class HospitalService {
 			break;
 		}
 	}
+
+	private void patientUpdate() {
+
+		
+
+		System.out.println("=====환자 개인정보 수정====");
+
+		System.out.println("수정할 환자의 이름을 입력하세요");
+		String ptName = sc.next();
+		System.out.println("수정할 환자의 전화번호를 입력하세요");
+		int ptPhone = sc.nextInt();
+		sc.nextInt();
+		
+		System.out.println(patient.get(0).getpNumber() +"ㅁㄴㅇㅁㄴㅇ"+ ptPhone);
+				
+		
+		
+		for (Patient pt : patient) {
+
+			if (pt.getName().equals(ptName) && pt.getpNumber().equals(ptPhone)) {
+		
+				System.out.println(ptName + "환자님 수정할 항목을 선택하세요");
+				System.out.println("연락처");
+				System.out.println("담당과");
+
+				int editMenu = sc.nextInt();
+
+				switch (editMenu) {
+				case 1:
+					System.out.println("연락처 수정");
+					System.out.println("수정할 연락처를 입력하세요");
+					int Number = sc.nextInt();
+					System.out.println("수정완료");
+					pt.setpNumber(ptName);
+					System.out.println(pt);
+					break;
+				case 2:
+					System.out.println("담당 과 수정");
+					System.out.println("수정할 과를 입력하세요");
+					String depart=sc.next();
+					pt.setDepartment(depart);
+					break;
+					
+					
+					
+				}
+
+			}else {
+				System.out.println("조회하신 환자는 존재하지 않습니다");
+				break;
+			}
+		}
+		
+		
+
+	}
+
 	public void doctorList() {
 		System.out.println();
 		System.out.println("   교수 명단 입니다.");
-		
-		for(Doctor dt : doctor) {
+
+		for (Doctor dt : doctor) {
 			System.out.println(dt);
 			System.out.println();
+		}
+	}
+
+	public void departmentList() {
+		System.out.println("교수조회 ");
+		Map<String, List<Doctor>> dtByDpt = new HashMap<String, List<Doctor>>();
+		// 과를 키로 지정 하고 해당 과를 가진 List를 value로 저장
+
+		for (Doctor dt : doctor) {
+
+			String dpt = dt.getDepartment(); // 과 얻어오기
+			dtByDpt.putIfAbsent(dpt, new ArrayList<Doctor>());
+			// putIfAbsent() :map에서 제공하는 메서드로
+			// 해당 키가 존재하지 않는 경우 전달받은 값을 추가
+			// -> Map에 해당 과의 리스트가 없는 경우에만 새로운 리스트를 생성하여 추가
+
+			dtByDpt.get(dpt).add(dt);
+			// dpt에 맞는 벨류값이 반환 -> List
+			// list.add(dt) ->전달된 dt 객체를 list에 추가
+
+		}
+		System.out.println();
+
+		for (Entry<String, List<Doctor>> entry : dtByDpt.entrySet()) {
+			String department = entry.getKey(); // 해당 enrty 의 과 를 얻어옴
+
+			List<Doctor> doctors = entry.getValue();
+			System.out.println("[담당과  :" + department + "]");
+
+			for (Doctor departList : doctors) {
+				System.out.println(departList);
+			}
+			System.out.println();
+
 		}
 	}
 }
