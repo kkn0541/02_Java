@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.InputMismatchException;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -182,6 +183,16 @@ public class HospitalService {
 		System.out.print("생년월일:");
 		String birth = sc.next();
 
+		while (true) {
+
+			if (birth.length() == 8) {
+				break;
+			} else {
+				System.out.println("생년원일은 8자리로 입력해주세요");
+				adminAdd();
+			}
+		}
+
 		System.out.println("회원가입 성공! 다시 로그인 해주세요");
 		admin.add(new Admin(id, pw1, pw2, birth));
 
@@ -261,11 +272,11 @@ public class HospitalService {
 
 		do {
 			System.out.println("1. 입원환자조회"); // select
-			System.out.println("2. 입원환자추가"); // update
+			System.out.println("2. 입원환자추가"); // create
 			System.out.println("3. 환자정보변경"); // update
 			System.out.println("4. 퇴원"); // delete
 			System.out.println("5. 교수 조회"); // select , sort
-			System.out.println("6. 담당 교수 할당");
+			System.out.println("6. 담당 교수 지정");
 
 			System.out.print("번호 선택 : ");
 
@@ -288,6 +299,9 @@ public class HospitalService {
 					break;
 				case 5:
 					departmentList();
+					break;
+				case 6:
+					doctorAdd();
 					break;
 
 				case 0:
@@ -362,7 +376,7 @@ public class HospitalService {
 		char gender = sc.next().toUpperCase().charAt(0);
 
 		System.out.print("환자 연락처");
-		int pNumber = sc.nextInt();
+		String pNumber = sc.next();
 
 		System.out.print("담당 과 - 내과,외과,안과 중 선택하세요");
 		String department = sc.next();
@@ -372,11 +386,11 @@ public class HospitalService {
 
 		for (Patient ptAdd : patient) {
 
-			patient.add(new Patient(name, birth, gender, birth, department, day));
+			patient.add(new Patient(name, birth, gender, pNumber, department, day));
 			System.out.println(name + "  환자님을 추가하였습니다.");
 			System.out.println();
 			patientList();
-			break;
+			return;
 
 		}
 
@@ -440,27 +454,22 @@ public class HospitalService {
 
 	private void patientUpdate() {
 
-		
-
 		System.out.println("=====환자 개인정보 수정====");
 
 		System.out.println("수정할 환자의 이름을 입력하세요");
 		String ptName = sc.next();
-		System.out.println("수정할 환자의 전화번호를 입력하세요");
-		int ptPhone = sc.nextInt();
-		sc.nextInt();
 		
-		System.out.println(patient.get(0).getpNumber() +"ㅁㄴㅇㅁㄴㅇ"+ ptPhone);
-				
-		
+
+
 		
 		for (Patient pt : patient) {
+			System.out.println(pt.getName().equals(ptName));
 
-			if (pt.getName().equals(ptName) && pt.getpNumber().equals(ptPhone)) {
-		
+			if (pt.getName().equals(ptName) ) {
+
 				System.out.println(ptName + "환자님 수정할 항목을 선택하세요");
-				System.out.println("연락처");
-				System.out.println("담당과");
+				System.out.println("1. 연락처");
+				System.out.println("2. 담당과");
 
 				int editMenu = sc.nextInt();
 
@@ -468,29 +477,25 @@ public class HospitalService {
 				case 1:
 					System.out.println("연락처 수정");
 					System.out.println("수정할 연락처를 입력하세요");
-					int Number = sc.nextInt();
+					String Number = sc.next();
 					System.out.println("수정완료");
-					pt.setpNumber(ptName);
+					pt.setpNumber(Number);
 					System.out.println(pt);
 					break;
 				case 2:
 					System.out.println("담당 과 수정");
 					System.out.println("수정할 과를 입력하세요");
-					String depart=sc.next();
+					String depart = sc.next();
 					pt.setDepartment(depart);
 					break;
-					
-					
-					
+
 				}
 
-			}else {
+			} else {
 				System.out.println("조회하신 환자는 존재하지 않습니다");
 				break;
 			}
 		}
-		
-		
 
 	}
 
@@ -537,4 +542,12 @@ public class HospitalService {
 
 		}
 	}
+
+	public void doctorAdd() {
+		Map<String, List<Patient>> doctorAdd = new HashMap<String, List<Patient>>();
+//             교수   환자정보
+		List<Patient> ptn1 = new ArrayList<Patient>();
+
+	}
+
 }

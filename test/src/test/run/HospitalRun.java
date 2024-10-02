@@ -7,6 +7,7 @@ public static void main(String[] args) {
 	
 	HospitalService hsService = new HospitalService();
 	
+	//hsService.doctorAdd();
 	
 	hsService.displayMenu();
 }
